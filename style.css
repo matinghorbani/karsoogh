@@ -1,0 +1,71 @@
+.control3 {
+    display: none;
+}
+
+.loading .spinner {
+    display: block;
+}
+
+.circle-timer {
+    position: absolute;
+    left: 20px;
+    top: 120px; /* موقعیت تایمر پایین تر */
+    width: 100px;
+    height: 100px;
+    border: 10px solid lightgray;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 80px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-bar-container {
+    position: relative;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #76c7c0;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.result-overlay {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.result-overlay.correct {
+    border-color: green;
+}
+
+.result-overlay.incorrect {
+    border-color: red;
+}
+
+.result-overlay p {
+    margin: 10px 0;
+}
+
+#results-table {
+    display: none;
+    margin-top: 20px;
+}
