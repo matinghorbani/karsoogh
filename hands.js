@@ -46,6 +46,26 @@ let questions = [
     }
 ];
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+questions = questions.map(question => {
+    let choices = question.choices.slice(); // Copy the choices array
+    let correctAnswer = choices[question.answer]; // Get the correct answer
+    choices = shuffleArray(choices); // Shuffle the choices
+    let newAnswer = choices.indexOf(correctAnswer); // Find the new index of the correct answer
+    return {
+        question: question.question,
+        choices: choices,
+        answer: newAnswer
+    };
+});
+
 let currentQuestionIndex = 0;
 let selectionStartTime = null;
 const selectionThreshold = 3000; // 3 seconds
